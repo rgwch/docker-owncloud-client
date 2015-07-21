@@ -1,7 +1,12 @@
 FROM debian:latest
 MAINTAINER weirich@elexis.ch
-RUN echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud-client.list && \
-apt-get -y update && apt-get install -y owncloud-client
+
+RUN apt-get update && apt-get install -y wget 
+RUN wget http://download.opensuse.org/repositories/isv:ownCloud:desktop/Debian_8.0/Release.key 
+RUN apt-key add - < Release.key  
+
+RUN echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud-client.list
+RUN apt-get -y update && apt-get install -y owncloud-client 
 
 ADD startup.sh /startup.sh
 RUN chmod +x /startup.sh
