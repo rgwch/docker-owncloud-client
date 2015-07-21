@@ -1,5 +1,8 @@
 #!/bin/bash
 
+HOSTUSER=owncloud
+LOCALDIR=/srv/owncloud
+
 #add hostuser so files will be written as this user instead of root
 useradd -d /home/$HOSTUSER -m $HOSTUSER
 
