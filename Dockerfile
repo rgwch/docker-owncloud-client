@@ -8,12 +8,16 @@ RUN apt-key add - < Release.key
 RUN echo 'deb http://download.opensuse.org/repositories/isv:/ownCloud:/desktop/Debian_8.0/ /' >> /etc/apt/sources.list.d/owncloud-client.list
 RUN apt-get -y update && apt-get install -y owncloud-client 
 
-ADD startup.sh /startup.sh
+# Defaults for some parameters
+ENV HOSTUSER=owncloud
+ENV INTERVAL=1800
+ENV LOCALDIR=/srv/owncloud
+
+COPY startup.sh /startup.sh
 RUN chmod +x /startup.sh
 
 # Cleanup
-RUN apt-get clean
-RUN rm -rf /usr/share/doc /usr/share/man /usr/share/locale /usr/share/info /usr/share/lintian
+RUN apt-get clean && rm Release.key && rm -rf /usr/share/doc /usr/share/man /usr/share/locale /usr/share/info /usr/share/lintian
 
-ENTRYPOINT [ "/startup.sh" ]
+CMD [ "/startup.sh" ]
 

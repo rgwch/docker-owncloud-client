@@ -1,8 +1,5 @@
 #!/bin/bash
 
-HOSTUSER=owncloud
-LOCALDIR=/srv/owncloud
-
 #add hostuser so files will be written as this user instead of root
 useradd -d /home/$HOSTUSER -m $HOSTUSER
 
@@ -17,7 +14,6 @@ chown $HOSTUSER.$HOSTUSER /home/$HOSTUSER/.netrc
 chown -R $HOSTUSER.$HOSTUSER $LOCALDIR
 
 LOGFILE="/home/$HOSTUSER/oc.log"
-
 
 while true
 do
