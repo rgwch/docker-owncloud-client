@@ -13,7 +13,7 @@ chown $HOSTUSER.$HOSTUSER /home/$HOSTUSER/.netrc
 
 chown -R $HOSTUSER.$HOSTUSER $LOCALDIR
 
-LOGFILE="/home/$HOSTUSER/oc.log"
+LOGFILE="${LOCALDIR}/oc.log"
 
 while true
 do
