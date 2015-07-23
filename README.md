@@ -17,7 +17,7 @@ Create a file `env.txt` and make it read only for root and no access for all oth
 
 Create and run the docker container like this:
 
-    sudo docker run -d --env-file env.txt -v <host-folder>:/srv/owncloud --name <name for the container> rgwch/docker-owncloud-client:latest
+    sudo docker run -d --env-file env.txt -v <host-folder>:/srv/owncloud --name <name for the container> rgwch/owncloud-client:latest
 
 ### Examples
 
@@ -27,11 +27,11 @@ Create and run the docker container like this:
 
 and then:
 
-    sudo docker run -d -env-file env.txt -v /srv/ebooks:/srv/owncloud --name calibre-books rgwch/docker-owncloud-client:latest
+    sudo docker run -d -env-file env.txt -v /srv/ebooks:/srv/owncloud --name calibre-books rgwch/owncloud-client:latest
 
 or
 
-    sudo docker run -d -env-file env.txt -v /srv/owncloud --name calibre-books rgwch/docker-owncloud-client:latest
+    sudo docker run -d -env-file env.txt -v /srv/owncloud --name calibre-books rgwch/owncloud-client:latest
 
 The first example will use a physical directory on the host to collect files from owncloud, while the second one creates and uses a docker data-container. A second docker container could use this data container like this:
 
