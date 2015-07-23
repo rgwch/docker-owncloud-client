@@ -1,4 +1,4 @@
-§#!/bin/bash
+#!/bin/bash
 
 #add hostuser so files will be written as this user instead of root
 useradd -d /home/$HOSTUSER -m $HOSTUSER
