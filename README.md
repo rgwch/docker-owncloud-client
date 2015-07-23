@@ -1,4 +1,4 @@
-# docker-owncloud-client
+# owncloud-client
 A terminal-only owncloud client based on debian:latest
 
 This docker build is based on [https://github.com/idef1x/docker-owncloud-client](https://github.com/idef1x/docker-owncloud-client),
